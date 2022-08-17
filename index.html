@@ -3,24 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Inicio - Encriptador</title>
+    <link rel="stylesheet" href="reset.css">    
     <link rel="stylesheet" href="estilo.css">    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 </head>
 <body>
-    <head>
+    <header>
         <img id="logo" src="imagenes/Logo.svg">
-    </head>
-    <main>
-        <textarea id="mensaje" placeholder="Ingrese el texto aquí" cols="40" rows="15"></textarea>        
-        <div id="botonesCaja">
-            <span><img src="imagenes/Info.svg" alt=""> Solo letras minúsculas y sin acentos</span> 
-            <br><br>
-            <button id="btnEncriptar" class="btnEstilo">Encriptar</button>
-            <button id="btnDesencriptar" class="btnEstilo">Desencriptar</button>      
-        </div>       
-    </main>
+    </header>
     <aside>
         <p id="textoClave"></p>
         <div id="asideCompleto">
@@ -31,7 +23,16 @@
                 <p id="textoFeed">Ingresa el texto que desees encriptar o <br>desencriptar.</p>
             </div>
         </div>        
-    </aside>
+    </aside> 
+    <main>
+        <textarea id="mensaje" placeholder="Ingrese el texto aquí" cols="40" rows="15"></textarea>        
+        <div id="botonesCaja">
+            <span><img src="imagenes/Info.svg" alt=""> Solo letras minúsculas y sin acentos</span> 
+            <br><br>
+            <button id="btnEncriptar" class="botones">Encriptar</button>
+            <button id="btnDesencriptar" class="botones">Desencriptar</button>      
+        </div>        
+    </main>    
     <footer id="misDatos">
         &copy; Creada por Marlon Daniel Turcios Sanchez 2022
     </footer>
