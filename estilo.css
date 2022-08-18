@@ -1,18 +1,22 @@
+/*PC*/
 body {
-    margin: 0;
     background-color: #F2F5FC;
 }
 
 header {
-    display: inline-block;
-    width: 60em;
+    display: block;
     height: 8em;
 }
 
+main{
+    display: inline-block;
+}
+
 aside {
-    margin: 3.5em;
-    float: right;
-    width: 22em;
+    position: absolute;
+    top: 2em;
+    left: 66em;
+    width: 27em;
     height: 38em;
     background: #FFFFFF;
 
@@ -21,20 +25,52 @@ aside {
     border-radius: 32px;
 }
 
-#logo {
+.seccionTextoResuelto{
+    margin: 1em auto;
+    width: 80%;
+    height: 92%;
+}
+
+#textoResuelto {
+    font-size: 1.3em;
+    color: #495057;
+    background-color: #FFFFFF;
+    height: 89%;
+}
+
+.textoSinResolver {
+    text-align: center;    
+    text-justify: distribute;
+}
+
+.munheco {
+    width: 15em;
+    margin: 6em 3.5em;
+}
+
+.hFeedSinResolver {
+    font-weight: 700;
+    color: #343A40;
+    font-size: 2em;
+}
+
+.pFeedSinResolver {
+    font-weight: 400;
+    color: #495057;
+    font-size: 1.5em;
+}
+
+.aluraLogo {
     padding: 1.5em 2.5em;    
 }
 
-main{
-    display: inline-block;
-}
-
-#mensaje {
+.seccionCodigoBase {
     /* Posicion y dimension */
     margin: 0em 0 1em 9em;
-    padding-right: 7em;
-    height: 15em;
+    height: 25em;
+}
 
+.seccionCodigoBase textarea, .textoResuelto{
     /* Fuente */
     font-family: 'Inter', sans-serif;
     font-weight: 400;
@@ -44,17 +80,27 @@ main{
     /* Color y diseño */
     color: #0A3871; 
     background-color: #F2F5FC;
+    
     border: none;
     resize: none;
+
+    /*Textarea*/
+    height: 100%;
+    width: 100%;
 }
 
 ::placeholder { 
     color: #0A3871;
 }
 
-#botonesCaja {
-    margin-left: 13em;
-    width: 48.5em;
+.seccionBotones {
+    margin-left: 9em;
+    width: 49.5em;
+}
+
+.feedBotones{
+    display: block;
+    margin: 1em;
 }
 
 .botones {
@@ -70,36 +116,113 @@ main{
     cursor: pointer;
 }
 
-#btnEncriptar {
+.btnEncriptar {
     padding: 1em 10em;
+    margin-right: 1em;
     background-color: #0A3871;
     color: #FFFFFF;
 }
 
-#btnDesencriptar {
+.btnDesencriptar {
     background-color: #D8DFE8;
     color: #0A3871;
 }
 
-#munheco {
-    width: 15em;
-    margin: 4.5em 3.5em;
-}
-
-#contenido {
-    text-align: center;     
-}
-
-h1 {
-    font-weight: 700;
-    color: #343A40;
-}
-
-#textoFeed {
-    font-weight: 400;
-    color: #495057;
-}
-
-#misDatos {
+.misDatos {
     margin: 2em;
+}
+
+/*Nest hub max*/
+@media screen and (max-width:1280px){
+    .seccionCodigoBase {
+        margin: 0em 0 1em 4em;
+        height: 29em;
+    }
+
+    .seccionCodigoBase textarea {
+        font-size: 30px;
+    }
+
+    .seccionBotones {
+        margin-left: 5em;
+    }
+
+    aside {
+        left: 56em;
+        height: 45em;
+    }
+}
+
+/*Tablet*/
+@media screen and (max-width:1080px){
+    header {
+        display: block;
+        width: auto;
+        height: 10em;        
+    }
+
+    main{
+        display: block;
+    }    
+
+    .seccionCodigoBase {
+        padding: 0em;
+        margin: 0em auto;
+        height: 43em;
+        width: 42em;
+    }
+
+    .seccionCodigoBase textarea{
+        padding: 0em;
+    }
+
+    .seccionBotones {
+        margin: 1em auto;
+        width: 50em;
+    }
+
+    aside {
+        position: static;
+        width: auto;
+        margin: 0em 3em 0em 3em;
+        height: auto;
+    }
+
+    .cajaResolucion{
+        padding: 2em;
+    }
+
+    .munheco {
+        display: none;
+    }
+}
+
+/*Celular*/
+@media screen and (max-width:800px){
+    .seccionCodigoBase {
+        height: 26em;
+        width: auto;
+    }
+
+    .seccionBotones {
+        margin: 1em auto;
+        width: 96%;
+    }
+
+    .botones {
+        padding: 1em 0;
+        width: 100%;
+    }
+
+    .btnEncriptar {
+        padding: 1em 0;
+    }
+
+    .cajaResolucion{
+        padding: 1em;
+    }
+
+    aside {
+        margin: 1em;
+    }
 }

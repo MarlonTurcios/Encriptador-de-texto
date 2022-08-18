@@ -1,18 +1,20 @@
 var btnEncriptar = document.getElementById("btnEncriptar");
 var btnDesencriptar = document.getElementById("btnDesencriptar");
-var asideCompleto = document.getElementById("asideCompleto");
-var textoClave = document.getElementById("textoClave");
-var mensaje = document.getElementById("mensaje");
+var btnCopiar = document.getElementById("btnCopiar");/* */
+var cajaResolucion = document.getElementById("cajaResolucion");
+var textoResuelto = document.getElementById("textoResuelto");
+var seccionTextoResuelto = document.getElementById("seccionTextoResuelto");
+var codigoBase = document.getElementById("codigoBase");
 
 function desaparecer() {
-    asideCompleto.style.display = "none";
-    textoClave.style.display = "";
-    textoClave.innerHTML = mensaje.value;
+    cajaResolucion.style.display = "none";
+    seccionTextoResuelto.style.display = "";
+    textoResuelto.value = codigoBase.value;
 }
 
 function aparecer() {
-    document.getElementById("asideCompleto").style.display = "";
-    textoClave.style.display = "none";
+    cajaResolucion.style.display = "";
+    seccionTextoResuelto.style.display = "none";
 }
 
 btnEncriptar.onclick = desaparecer;

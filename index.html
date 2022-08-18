@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
     <title>Inicio - Encriptador</title>
     <link rel="stylesheet" href="reset.css">    
     <link rel="stylesheet" href="estilo.css">    
@@ -11,31 +12,40 @@
 </head>
 <body>
     <header>
-        <img id="logo" src="imagenes/Logo.svg">
+        <img class="aluraLogo" src="imagenes/Logo.svg">
     </header>
-    <aside>
-        <p id="textoClave"></p>
-        <div id="asideCompleto">
-            <img id="munheco" src="imagenes/Muñeco.svg">
-            
-            <div id="contenido">
-                <h1 id="tituloFeed">Ningún mensaje fue <br>encontrado</h1>
-                <p id="textoFeed">Ingresa el texto que desees encriptar o <br>desencriptar.</p>
-            </div>
-        </div>        
-    </aside> 
+
     <main>
-        <textarea id="mensaje" placeholder="Ingrese el texto aquí" cols="40" rows="15"></textarea>        
-        <div id="botonesCaja">
-            <span><img src="imagenes/Info.svg" alt=""> Solo letras minúsculas y sin acentos</span> 
-            <br><br>
-            <button id="btnEncriptar" class="botones">Encriptar</button>
-            <button id="btnDesencriptar" class="botones">Desencriptar</button>      
-        </div>        
-    </main>    
-    <footer id="misDatos">
+        <section class="seccionCodigoBase">
+            <textarea id="codigoBase" placeholder="Ingrese el texto aquí" cols="40" rows="15"></textarea>
+        </section>
+
+        <section class="seccionBotones">
+            <span class="feedBotones"><img src="imagenes/Info.svg" alt=""> Solo letras minúsculas y sin acentos</span>
+            <button id="btnEncriptar" class="botones btnEncriptar">Encriptar</button>
+            <button id="btnDesencriptar" class="botones btnDesencriptar">Desencriptar</button>
+        </section>        
+    </main>
+
+    <aside>
+        <section id="seccionTextoResuelto" class="seccionTextoResuelto" style="display: none;">
+            <textarea class="textoResuelto" id="textoResuelto" cols="30" rows="10"></textarea>
+            <button id="btnCopiar" class="botones btnDesencriptar btnCopiar">Copiar</button>
+        </section>
+        <section id="cajaResolucion" class="cajaResolucion">
+            <img class="munheco" src="imagenes/Muñeco.svg">
+            
+            <section class="textoSinResolver">
+                <h1 class="hFeedSinResolver">Ningún mensaje fue encontrado</h1>
+                <p class="pFeedSinResolver">Ingresa el texto que desees encriptar o desencriptar.</p>
+            </section>
+        </section>        
+    </aside> 
+
+    <footer class="misDatos">
         &copy; Creada por Marlon Daniel Turcios Sanchez 2022
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
