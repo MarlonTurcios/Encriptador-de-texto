@@ -188,7 +188,7 @@ aside {
         height: auto;
     }
 
-    .cajaResolucion{
+    .seccionSinResolver{
         padding: 2em;
     }
 
@@ -218,7 +218,7 @@ aside {
         padding: 1em 0;
     }
 
-    .cajaResolucion{
+    .seccionSinResolver{
         padding: 1em;
     }
 
