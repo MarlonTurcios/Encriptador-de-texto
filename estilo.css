@@ -1,6 +1,7 @@
 /*PC*/
 body {
     background-color: #F2F5FC;
+    min-width: 280px;
 }
 
 header {

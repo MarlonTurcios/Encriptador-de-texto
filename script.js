@@ -6,39 +6,100 @@ var textoResuelto = document.getElementById("textoResuelto");
 var seccionTextoResuelto = document.getElementById("seccionTextoResuelto");
 var codigoBase = document.getElementById("codigoBase");
 
-function desaparecer() {
-    cajaResolucion.style.display = "none";
-    seccionTextoResuelto.style.display = "";
-    textoResuelto.value = codigoBase.value;
+//Eventos
+function fEncriptar() {
+
+    //Valida que se muestre la imagen cuando sea necesario
+    if(codigoBase.value != ""){
+
+        //Encriptar y convertir a minuscula
+        const textoEncriptado = encriptar(codigoBase.value);
+        
+        //Ocultar, mostrar y aplicar formato en cajas de texto
+        textoResuelto.value = textoEncriptado;
+        cajaResolucion.style.display = "none";
+        seccionTextoResuelto.style.display = "";
+        codigoBase.value = "";
+
+    } else {
+
+        cajaResolucion.style.display = "";
+        seccionTextoResuelto.style.display = "none";
+
+    }
+
 }
 
-function aparecer() {
-    cajaResolucion.style.display = "";
-    seccionTextoResuelto.style.display = "none";
+function fDesencriptar() {
+
+    //Valida que se muestre la imagen cuando sea necesario
+    if(codigoBase.value == ""){
+
+        cajaResolucion.style.display = "";
+        seccionTextoResuelto.style.display = "none";
+
+    }  else {
+
+        //Encriptar y convertir a minuscula
+        const textoDesencriptado = desencriptar(codigoBase.value);
+        
+        //Ocultar, mostrar y aplicar formato en cajas de texto
+        textoResuelto.value = textoDesencriptado;
+        cajaResolucion.style.display = "none";
+        seccionTextoResuelto.style.display = "";
+        codigoBase.value = "";
+
+    }
+
 }
 
-btnEncriptar.onclick = desaparecer;
-btnDesencriptar.onclick = aparecer;
+function fCopiar() {
 
+    textoResuelto.select();
+    navigator.clipboard.writeText(textoResuelto.value);
 
-/*function encriptar(stringEncriptada) {
-    let matrizCodigo = [["e", "enter",]];
+}
+
+//Calculo de cifrados
+
+function encriptar(stringEncriptada) {
+
+    var diccionario = [["e", "enter"],["i", "imes"],["a", "ai"],["o", "ober"],["u", "ufat"]];
     stringEncriptada = stringEncriptada.toLowerCase();
-    for (let i = 0; i < matrizCodigo.length; i++) {
-        if (stringEncriptada.includes(matrizCodigo[i][0])) {
-            stringEncriptada = stringEncriptada.replaceAll(matrizCodigo[i][0],matrizCodigo[i][1]);
+
+    for (var i = 0; i < diccionario.length; i++) {
+
+        if (stringEncriptada.includes(diccionario[i][0])) {
+
+            stringEncriptada = stringEncriptada.replaceAll(diccionario[i][0],diccionario[i][1]);
+
         }
         
     }
+
     return stringEncriptada;
+
 }
 
-function btnEncriptar() {
-    const textoEncriptado = encriptar(inputTexto.value);
-    mensaje.value = textoEncriptado;
-    mensaje.style.backgroundImage = "none";
-    inputTexto.value = textoEncriptado;
-    navigator.clipboard.writeText(mensaje.value);
-    mensaje.value = "";
-    alert("Texto copiado");
-}*/
+function desencriptar(stringDesencriptada) {
+
+    var diccionario = [["enter", "e"],["imes", "i"],["ai", "a"],["ober", "o"],["ufat", "u"]];
+    stringDesencriptada = stringDesencriptada.toLowerCase();
+
+    for (var i = 0; i < diccionario.length; i++) {
+
+        if (stringDesencriptada.includes(diccionario[i][0])) {
+
+            stringDesencriptada = stringDesencriptada.replaceAll(diccionario[i][0],diccionario[i][1]);
+
+        }
+        
+    }
+
+    return stringDesencriptada;
+
+}
+
+btnEncriptar.onclick = fEncriptar;
+btnDesencriptar.onclick = fDesencriptar;
+btnCopiar.onclick = fCopiar;
